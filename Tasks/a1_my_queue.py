@@ -14,8 +14,7 @@ def enqueue(elem: Any) -> None:
     :return: Nothing
     """
     global deque_list
-    deque_list.append()
-    print(elem)
+    deque_list.append(elem)
     return None
 
 
@@ -25,7 +24,11 @@ def dequeue() -> Any:
 
     :return: dequeued element
     """
-    return None
+    global deque_list
+    if deque_list:
+        return deque_list.pop(0)
+    else:
+        return None
 
 
 def peek(ind: int = 0) -> Any:
@@ -35,6 +38,7 @@ def peek(ind: int = 0) -> Any:
     :param ind: index of element (count from the beginning)
     :return: peeked element
     """
+
     print(ind)
     return None
 
@@ -45,4 +49,6 @@ def clear() -> None:
 
     :return: None
     """
+    global deque_list
+    deque_list = []
     return None
